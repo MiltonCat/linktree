@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- ============================================================= -->
+<!--  EDITA TUS DATOS: busca la palabra  EDITAR  en el archivo     -->
+<!-- ============================================================= -->
+<title>Quiénes somos · Milton · Inmobiliaria & Legal</title>
+<meta name="description" content="Conoce nuestro equipo y servicios: asesoría inmobiliaria y respaldo legal para comprar, vender o rentar con seguridad." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#070b14; --card:rgba(20,27,45,.72); --card-bd:rgba(99,130,255,.14);
+    --ink:#eaf0ff; --muted:#8a98b8; --brand:#6366f1; --brand-2:#22d3ee;
+    --whatsapp:#25d366; --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);
+    background:
+      radial-gradient(1000px 600px at 50% -10%, rgba(99,102,241,.26), transparent 60%),
+      radial-gradient(800px 500px at 100% 5%, rgba(34,211,238,.12), transparent 55%),
+      var(--bg);
+    -webkit-font-smoothing:antialiased;line-height:1.6;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px}
+
+  /* ---------- Top bar ---------- */
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:38px}
+  .back{
+    display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;
+    color:#c7d2ff;text-decoration:none;background:var(--card);border:1px solid var(--card-bd);
+    padding:9px 15px;border-radius:999px;backdrop-filter:blur(10px);transition:border-color .14s}
+  .back:hover{border-color:rgba(99,130,255,.4)}
+  .brandmini{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;letter-spacing:-.3px}
+  .brandmini .sq{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:15px}
+
+  /* ---------- Hero ---------- */
+  .hero{text-align:center;margin-bottom:48px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:var(--brand-2);margin-bottom:14px}
+  .hero h1{font-size:clamp(28px,6vw,44px);font-weight:900;letter-spacing:-1px;line-height:1.1;
+    background:linear-gradient(120deg,#fff 30%,#a9b6ff 70%);-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p{margin-top:16px;font-size:16px;color:var(--muted);max-width:520px;margin-left:auto;margin-right:auto}
+
+  /* ---------- Section title ---------- */
+  .sec-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--muted);margin:0 0 20px;display:flex;align-items:center;gap:12px}
+  .sec-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--card-bd),transparent)}
+
+  /* ---------- Servicios ---------- */
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-bottom:54px}
+  .svc{background:var(--card);border:1px solid var(--card-bd);border-radius:var(--radius);
+    padding:22px;backdrop-filter:blur(12px);transition:transform .14s, border-color .14s}
+  .svc:hover{transform:translateY(-3px);border-color:rgba(99,130,255,.4)}
+  .svc .ic{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,rgba(99,102,241,.28),rgba(34,211,238,.18));color:#c7d2ff;
+    border:1px solid var(--card-bd);margin-bottom:15px}
+  .svc h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+  .svc p{font-size:13.5px;color:var(--muted)}
+  .svc.legal .ic{background:linear-gradient(135deg,rgba(34,211,238,.24),rgba(16,185,129,.16));color:#7ef0e0}
+
+  /* ---------- Equipo / Bios ---------- */
+  .team{display:flex;flex-direction:column;gap:22px;margin-bottom:54px}
+  .bio{display:flex;gap:20px;background:var(--card);border:1px solid var(--card-bd);
+    border-radius:22px;padding:24px;backdrop-filter:blur(12px)}
+  .bio .pic{width:92px;height:92px;flex:none;border-radius:20px;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:34px;font-weight:900;overflow:hidden}
+  .bio .pic img{width:100%;height:100%;object-fit:cover}
+  .bio.m  .pic{background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+  .bio.a  .pic{background:linear-gradient(135deg,#22d3ee,#10b981)}
+  .bio .info{flex:1;min-width:0}
+  .bio .info h3{font-size:19px;font-weight:800;letter-spacing:-.3px}
+  .bio .info .pos{font-size:13px;font-weight:600;color:var(--brand-2);margin:3px 0 11px}
+  .bio.a .info .pos{color:#5eead4}
+  .bio .info p{font-size:14px;color:#b6c2dd}
+  .bio .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+  .bio .tags span{font-size:11.5px;font-weight:600;color:#cdd6ff;background:rgba(99,102,241,.16);
+    border:1px solid var(--card-bd);padding:4px 11px;border-radius:999px}
+  @media(max-width:520px){.bio{flex-direction:column;align-items:flex-start}}
+
+  /* ---------- CTA final ---------- */
+  .cta-box{text-align:center;background:
+      linear-gradient(135deg,rgba(99,102,241,.18),rgba(34,211,238,.1));
+    border:1px solid var(--card-bd);border-radius:24px;padding:38px 24px}
+  .cta-box h2{font-size:23px;font-weight:800;letter-spacing:-.4px}
+  .cta-box p{color:var(--muted);font-size:14.5px;margin:10px 0 22px;max-width:420px;margin-left:auto;margin-right:auto}
+  .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--whatsapp);color:#04130a;
+    font-weight:800;font-size:15.5px;text-decoration:none;padding:16px 30px;border-radius:14px;
+    box-shadow:0 12px 30px rgba(37,211,102,.3);transition:transform .12s}
+  .cta-btn:active{transform:scale(.98)}
+
+  footer{text-align:center;margin-top:40px;font-size:11.5px;color:#4d5d7d}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <!-- ===================== TOP BAR ===================== -->
+  <div class="topbar">
+    <a class="back" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      Volver
+    </a>
+    <div class="brandmini"><span class="sq">M</span> Milton</div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="eyebrow">Quiénes somos</div>
+    <h1>Propiedades con respaldo legal, de principio a fin</h1>
+    <!-- EDITAR: descripción general del negocio -->
+    <p>Unimos la asesoría inmobiliaria con el respaldo de una abogada especializada, para que compres, vendas o rentes con total seguridad y sin sorpresas.</p>
+  </section>
+
+  <!-- ===================== SERVICIOS ===================== -->
+  <h2 class="sec-title">Nuestros servicios</h2>
+  <section class="services">
+    <!-- EDITAR cada tarjeta de servicio -->
+    <div class="svc">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3l9-8z"/></svg></div>
+      <h3>Compra y venta</h3>
+      <p>Te acompañamos en todo el proceso, desde la búsqueda hasta la firma.</p>
+    </div>
+    <div class="svc">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M4 10h3v10H4V10zm6.5-6h3v16h-3V4zM17 13h3v7h-3v-7z"/></svg></div>
+      <h3>Renta y administración</h3>
+      <p>Encontramos al inquilino ideal y gestionamos tu propiedad.</p>
+    </div>
+    <div class="svc">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg></div>
+      <h3>Avalúo y asesoría</h3>
+      <p>Valoramos tu propiedad y te orientamos para decidir mejor.</p>
+    </div>
+    <div class="svc legal" id="legal">
+      <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l8 4v2h-2v-.5L12 5.2 6 8.5V9H4V7l8-4zM4 11h16v2H4v-2zm2 4h12l-1 6H7l-1-6z"/></svg></div>
+      <h3>Asesoría legal</h3>
+      <p>Contratos, escrituras y revisión jurídica para operar con seguridad.</p>
+    </div>
+  </section>
+
+  <!-- ===================== EQUIPO ===================== -->
+  <h2 class="sec-title">Nuestro equipo</h2>
+  <section class="team">
+
+    <!-- ===== BIO MILTON (EDITAR) ===== -->
+    <div class="bio m">
+      <!-- EDITAR: inicial o <img src="milton.jpg" alt="Milton"> -->
+      <div class="pic">M</div>
+      <div class="info">
+        <h3>Milton [Apellido]</h3>
+        <div class="pos">Fundador · Asesor Inmobiliario</div>
+        <!-- EDITAR: tu biografía -->
+        <p>Soy [tu nombre], fundador de la inmobiliaria. Con [X años] de experiencia en el sector, ayudo a las familias a encontrar la propiedad correcta y a invertir con confianza. Mi enfoque es un trato cercano, transparente y orientado a resultados.</p>
+        <div class="tags">
+          <span>Compra-venta</span><span>Inversión</span><span>Atención personalizada</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BIO ABOGADA (EDITAR) ===== -->
+    <div class="bio a">
+      <!-- EDITAR: inicial o <img src="abogada.jpg" alt="Nombre"> -->
+      <div class="pic">A</div>
+      <div class="info">
+        <h3>[Nombre de la abogada]</h3>
+        <div class="pos">Abogada · Derecho Inmobiliario</div>
+        <!-- EDITAR: biografía de la abogada -->
+        <p>Abogada especializada en derecho inmobiliario y notarial. Acompaña a cada cliente para que sus operaciones sean seguras: revisión de contratos, escrituración y resolución de cualquier tema legal con claridad y cercanía.</p>
+        <div class="tags">
+          <span>Contratos</span><span>Escrituración</span><span>Seguridad jurídica</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-box">
+    <h2>¿Hablamos de tu propiedad?</h2>
+    <p>Cuéntanos qué necesitas y te asesoramos sin costo, con respaldo legal incluido.</p>
+    <!-- EDITAR: mismo número de WhatsApp que en la home -->
+    <a class="cta-btn"
+       href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20vi%20la%20p%C3%A1gina%20y%20quiero%20una%20asesor%C3%ADa"
+       target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Escríbenos por WhatsApp
+    </a>
+  </section>
+
+  <footer>© <span id="year"></span> Milton · Inmobiliaria &amp; Asesoría Legal</footer>
+</main>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

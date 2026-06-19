@@ -5,157 +5,114 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- ============================================================= -->
-<!--  EDITA ESTOS DATOS  (busca la palabra  EDITAR  en el archivo) -->
+<!--  EDITA TUS DATOS: busca la palabra  EDITAR  en el archivo     -->
 <!-- ============================================================= -->
-<title>Milton · Asesor Inmobiliario</title>
-<meta name="description" content="Compra, venta y renta de propiedades. Agenda tu asesoría sin costo." />
-
-<!-- Open Graph: cómo se ve al compartir el enlace en WhatsApp/redes -->
-<meta property="og:title" content="Milton · Asesor Inmobiliario" />
-<meta property="og:description" content="Compra, venta y renta de propiedades. Agenda tu asesoría sin costo." />
+<title>Milton · Inmobiliaria & Legal</title>
+<meta name="description" content="Compra, venta y renta de propiedades con respaldo legal. Agenda tu asesoría sin costo." />
+<meta property="og:title" content="Milton · Inmobiliaria & Legal" />
+<meta property="og:description" content="Compra, venta y renta de propiedades con respaldo legal." />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
 <style>
   :root{
-    /* ---- EDITAR: colores de marca ---- */
-    --bg:        #f4f6fb;
-    --card:      #ffffff;
-    --ink:       #0f1c2e;   /* texto principal */
-    --muted:     #5b6b80;   /* texto secundario */
-    --brand:     #1d6fe0;   /* azul principal */
-    --brand-dk:  #1659b6;
+    --bg:        #070b14;
+    --bg-2:      #0b1120;
+    --card:      rgba(20,27,45,.72);
+    --card-bd:   rgba(99,130,255,.14);
+    --ink:       #eaf0ff;
+    --muted:     #8a98b8;
+    --brand:     #6366f1;   /* indigo */
+    --brand-2:   #22d3ee;   /* cyan   */
     --whatsapp:  #25d366;
-    --border:    #e6eaf2;
-    --shadow:    0 10px 30px rgba(20,40,80,.08);
-    --radius:    16px;
+    --radius:    18px;
   }
-
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
     font-family:'Inter',system-ui,-apple-system,sans-serif;
-    background:
-      radial-gradient(1200px 500px at 50% -10%, #e7effd 0%, rgba(231,239,253,0) 60%),
-      var(--bg);
     color:var(--ink);
     min-height:100dvh;
-    display:flex;
-    justify-content:center;
-    padding:28px 16px 48px;
+    background:
+      radial-gradient(900px 500px at 50% -8%, rgba(99,102,241,.28), transparent 60%),
+      radial-gradient(700px 500px at 100% 10%, rgba(34,211,238,.14), transparent 55%),
+      var(--bg);
+    display:flex;justify-content:center;
+    padding:30px 16px 50px;
     -webkit-font-smoothing:antialiased;
   }
+  .wrap{width:100%;max-width:460px}
 
-  .wrap{width:100%;max-width:440px}
-
-  /* ---------- Encabezado / perfil ---------- */
-  .profile{text-align:center;margin-bottom:22px}
+  /* ---------- Perfil ---------- */
+  .profile{text-align:center;margin-bottom:24px}
   .avatar{
-    width:104px;height:104px;border-radius:50%;
-    margin:0 auto 14px;
-    background:linear-gradient(135deg,var(--brand),#5aa0ff);
+    width:108px;height:108px;border-radius:30px;margin:0 auto 16px;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
     display:flex;align-items:center;justify-content:center;
-    color:#fff;font-size:40px;font-weight:800;
-    box-shadow:var(--shadow);
-    border:4px solid #fff;
+    color:#fff;font-size:42px;font-weight:900;
+    box-shadow:0 16px 40px rgba(99,102,241,.45);
     overflow:hidden;
   }
-  /* Para usar foto: reemplaza el texto del .avatar por:
-     <img src="foto.jpg" alt="Milton" /> y el img se ajustará */
   .avatar img{width:100%;height:100%;object-fit:cover}
-
-  .name{font-size:23px;font-weight:800;letter-spacing:-.3px}
+  .name{font-size:25px;font-weight:800;letter-spacing:-.4px}
   .role{
-    display:inline-block;margin-top:6px;
-    font-size:13px;font-weight:600;color:var(--brand-dk);
-    background:#e7f0fd;padding:5px 12px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:7px;margin-top:9px;
+    font-size:12.5px;font-weight:600;color:#cdd6ff;
+    background:rgba(99,102,241,.16);border:1px solid var(--card-bd);
+    padding:6px 13px;border-radius:999px;
   }
-  .tagline{margin-top:12px;font-size:14.5px;color:var(--muted);line-height:1.5}
-  .location{margin-top:8px;font-size:13px;color:var(--muted);font-weight:500}
-  .location svg{vertical-align:-2px;margin-right:3px}
+  .role .dot{width:7px;height:7px;border-radius:50%;background:var(--brand-2);box-shadow:0 0 10px var(--brand-2)}
+  .tagline{margin-top:14px;font-size:14.5px;color:var(--muted);line-height:1.55}
 
-  /* ---------- Botón principal (WhatsApp) ---------- */
+  /* ---------- WhatsApp CTA ---------- */
   .cta-main{
     display:flex;align-items:center;justify-content:center;gap:10px;
-    width:100%;margin:22px 0 8px;
-    padding:17px;border-radius:14px;
-    background:var(--whatsapp);color:#fff;
-    font-size:16px;font-weight:700;text-decoration:none;
-    box-shadow:0 8px 22px rgba(37,211,102,.35);
-    transition:transform .12s ease, box-shadow .12s ease;
+    width:100%;margin:24px 0 6px;padding:18px;border-radius:15px;
+    background:var(--whatsapp);color:#04130a;
+    font-size:16px;font-weight:800;text-decoration:none;
+    box-shadow:0 12px 30px rgba(37,211,102,.32);
+    transition:transform .12s ease;
   }
   .cta-main:active{transform:scale(.98)}
 
-  /* ---------- Lista de enlaces ---------- */
-  .links{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+  /* ---------- Links ---------- */
+  .links{display:flex;flex-direction:column;gap:13px;margin-top:14px}
   .link{
-    display:flex;align-items:center;gap:14px;
-    background:var(--card);border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:16px 18px;text-decoration:none;color:var(--ink);
-    box-shadow:var(--shadow);
-    transition:transform .12s ease, border-color .12s ease;
+    position:relative;display:flex;align-items:center;gap:15px;
+    background:var(--card);border:1px solid var(--card-bd);
+    border-radius:var(--radius);padding:17px 18px;
+    text-decoration:none;color:var(--ink);
+    backdrop-filter:blur(12px);
+    transition:transform .14s ease, border-color .14s ease, background .14s ease;
   }
-  .link:hover{transform:translateY(-2px);border-color:#cdd9ec}
+  .link:hover{transform:translateY(-2px);border-color:rgba(99,130,255,.4);background:rgba(26,34,56,.85)}
   .link .ic{
-    width:42px;height:42px;flex:none;border-radius:11px;
+    width:46px;height:46px;flex:none;border-radius:13px;
     display:flex;align-items:center;justify-content:center;
-    background:#eef3fb;color:var(--brand);
+    background:linear-gradient(135deg,rgba(99,102,241,.25),rgba(34,211,238,.18));
+    color:#c7d2ff;border:1px solid var(--card-bd);
   }
   .link .tx{flex:1;min-width:0}
-  .link .tx b{display:block;font-size:15px;font-weight:600}
+  .link .tx b{display:block;font-size:15px;font-weight:700}
   .link .tx span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
-  .link .arrow{color:#b8c4d6;flex:none}
-
-  /* ---------- Sección destacada ---------- */
-  .section-title{
-    font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-    color:var(--muted);margin:26px 4px 12px;
-  }
-
-  /* ---------- Formulario rápido (lead) ---------- */
-  .lead{
-    background:var(--card);border:1px solid var(--border);
-    border-radius:var(--radius);box-shadow:var(--shadow);
-    padding:20px;margin-top:8px;
-  }
-  .lead h3{font-size:16px;font-weight:700;margin-bottom:4px}
-  .lead p{font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.45}
-  .lead label{font-size:12.5px;font-weight:600;color:var(--ink);display:block;margin-bottom:5px}
-  .lead input,.lead select,.lead textarea{
-    width:100%;font-family:inherit;font-size:14px;color:var(--ink);
-    border:1px solid var(--border);border-radius:10px;
-    padding:11px 12px;margin-bottom:13px;background:#fbfcfe;
-  }
-  .lead input:focus,.lead select:focus,.lead textarea:focus{
-    outline:none;border-color:var(--brand);background:#fff;
-  }
-  .lead textarea{resize:vertical;min-height:64px}
-  .lead button{
-    width:100%;padding:15px;border:none;border-radius:11px;cursor:pointer;
-    background:var(--brand);color:#fff;font-size:15px;font-weight:700;
-    font-family:inherit;
-    transition:background .12s ease, transform .12s ease;
-  }
-  .lead button:hover{background:var(--brand-dk)}
-  .lead button:active{transform:scale(.98)}
+  .link .arrow{color:#56688f;flex:none}
+  .link.legal .ic{background:linear-gradient(135deg,rgba(34,211,238,.22),rgba(16,185,129,.16));color:#7ef0e0}
 
   /* ---------- Redes ---------- */
-  .social{display:flex;justify-content:center;gap:14px;margin-top:28px}
+  .social{display:flex;justify-content:center;gap:13px;margin-top:30px}
   .social a{
-    width:44px;height:44px;border-radius:50%;
+    width:46px;height:46px;border-radius:14px;
     display:flex;align-items:center;justify-content:center;
-    background:var(--card);border:1px solid var(--border);
-    color:var(--muted);box-shadow:var(--shadow);
-    transition:color .12s ease, transform .12s ease;
+    background:var(--card);border:1px solid var(--card-bd);color:var(--muted);
+    backdrop-filter:blur(12px);transition:color .14s, transform .14s, border-color .14s;
   }
-  .social a:hover{color:var(--brand);transform:translateY(-2px)}
+  .social a:hover{color:#fff;transform:translateY(-2px);border-color:rgba(99,130,255,.4)}
 
-  footer{text-align:center;margin-top:30px;font-size:11.5px;color:#9aa7ba;line-height:1.6}
-  footer a{color:#9aa7ba}
+  footer{text-align:center;margin-top:32px;font-size:11.5px;color:#4d5d7d;line-height:1.7}
+  footer a{color:#6b7ba0;text-decoration:none}
 </style>
 </head>
 <body>
@@ -165,36 +122,35 @@
   <section class="profile">
     <!-- EDITAR: inicial o <img src="foto.jpg" alt=""> -->
     <div class="avatar">M</div>
-
-    <!-- EDITAR: tu nombre -->
+    <!-- EDITAR: tu nombre / marca -->
     <h1 class="name">Milton</h1>
-
-    <!-- EDITAR: tu rol -->
-    <div class="role">Asesor Inmobiliario</div>
-
+    <div class="role"><span class="dot"></span>Inmobiliaria &amp; Asesoría Legal</div>
     <!-- EDITAR: frase de presentación -->
-    <p class="tagline">Te ayudo a comprar, vender o rentar tu propiedad con un proceso claro y sin complicaciones.</p>
-
-    <!-- EDITAR: tu ciudad/zona -->
-    <p class="location">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-      Tu Ciudad, Zona de operación
-    </p>
+    <p class="tagline">Compra, vende o renta con un proceso claro y respaldo legal en cada paso.</p>
   </section>
 
-  <!-- ===================== CTA WHATSAPP ===================== -->
+  <!-- ===================== WHATSAPP ===================== -->
   <!-- EDITAR: cambia 521XXXXXXXXXX por tu número con código de país (sin + ni espacios) -->
   <a class="cta-main"
-     href="https://wa.me/521XXXXXXXXXX?text=Hola%20Milton%2C%20vi%20tu%20perfil%20y%20quiero%20informaci%C3%B3n%20sobre%20una%20propiedad"
+     href="https://wa.me/521XXXXXXXXXX?text=Hola%20Milton%2C%20vi%20tu%20perfil%20y%20quiero%20informaci%C3%B3n"
      target="_blank" rel="noopener">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     Escríbeme por WhatsApp
   </a>
 
-  <!-- ===================== ENLACES ===================== -->
+  <!-- ===================== LINKS ===================== -->
   <div class="links">
 
-    <!-- EDITAR: enlace a tus propiedades / catálogo -->
+    <!-- Quiénes somos -> página web con servicios + bios -->
+    <a class="link" href="nosotros.html">
+      <span class="ic">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </span>
+      <span class="tx"><b>Quiénes somos</b><span>Servicios, equipo y nuestra historia</span></span>
+      <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <!-- EDITAR: enlace a tu catálogo de propiedades -->
     <a class="link" href="#" target="_blank" rel="noopener">
       <span class="ic">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3l9-8z"/></svg>
@@ -203,47 +159,15 @@
       <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
     </a>
 
-    <!-- EDITAR: enlace para vender/avaluar su propiedad -->
-    <a class="link" href="#" target="_blank" rel="noopener">
+    <!-- Asesoría legal -> sección legal de la página nosotros -->
+    <a class="link legal" href="nosotros.html#legal">
       <span class="ic">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v8H3v-8zm4-6h2v14H7V7zm4 3h2v11h-2V10zm4-6h2v17h-2V4zm4 9h2v8h-2v-8z"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l8 4v2h-2v-.5L12 5.2 6 8.5V9H4V7l8-4zM4 11h16v2H4v-2zm2 4h12l-1 6H7l-1-6z"/></svg>
       </span>
-      <span class="tx"><b>¿Quieres vender tu propiedad?</b><span>Avalúo y asesoría sin costo</span></span>
-      <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-    </a>
-
-    <!-- EDITAR: enlace a tu web o portal (opcional) -->
-    <a class="link" href="#" target="_blank" rel="noopener">
-      <span class="ic">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.93 6h-2.95a15.65 15.65 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zM12 4c.83 1.2 1.48 2.53 1.91 4h-3.82c.43-1.47 1.08-2.8 1.91-4zM4.26 14a7.96 7.96 0 010-4h3.38a16.6 16.6 0 000 4H4.26zm.82 2h2.95a15.65 15.65 0 001.38 3.56A8.03 8.03 0 015.08 16zm2.95-8H5.08a8.03 8.03 0 014.33-3.56A15.65 15.65 0 008.03 8zM12 20c-.83-1.2-1.48-2.53-1.91-4h3.82A13.4 13.4 0 0112 20zm2.59-6h-5.18a14.7 14.7 0 010-4h5.18a14.7 14.7 0 010 4zm.4 5.56A15.65 15.65 0 0016.37 16h2.55a8.03 8.03 0 01-3.93 3.56zM16.73 14a16.6 16.6 0 000-4h3.38a7.96 7.96 0 010 4h-3.38z"/></svg>
-      </span>
-      <span class="tx"><b>Visita mi sitio web</b><span>Conoce todos mis servicios</span></span>
+      <span class="tx"><b>Asesoría legal inmobiliaria</b><span>Contratos, escrituras y seguridad jurídica</span></span>
       <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
     </a>
   </div>
-
-  <!-- ===================== FORMULARIO LEAD ===================== -->
-  <div class="section-title">Solicita información</div>
-  <form class="lead" id="leadForm">
-    <h3>Cuéntame qué buscas</h3>
-    <p>Déjame tus datos y te contacto por WhatsApp con opciones a tu medida.</p>
-
-    <label for="nombre">Nombre</label>
-    <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
-
-    <label for="interes">Estoy interesado en</label>
-    <select id="interes" name="interes" required>
-      <option value="Comprar">Comprar una propiedad</option>
-      <option value="Rentar">Rentar una propiedad</option>
-      <option value="Vender">Vender mi propiedad</option>
-      <option value="Invertir">Invertir / asesoría</option>
-    </select>
-
-    <label for="detalle">Detalle (opcional)</label>
-    <textarea id="detalle" name="detalle" placeholder="Zona, presupuesto, tipo de propiedad..."></textarea>
-
-    <button type="submit">Enviar por WhatsApp</button>
-  </form>
 
   <!-- ===================== REDES ===================== -->
   <div class="social">
@@ -260,27 +184,13 @@
   </div>
 
   <footer>
-    © <span id="year"></span> Milton · Asesor Inmobiliario<br/>
-    Hecho con dedicación · <a href="#">Aviso de privacidad</a>
+    © <span id="year"></span> Milton · Inmobiliaria &amp; Asesoría Legal<br/>
+    <a href="nosotros.html">Conoce al equipo</a>
   </footer>
 </main>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // EDITAR: pon tu número con código de país (sin + ni espacios) — el mismo del botón
-  const WHATSAPP = '521XXXXXXXXXX';
-
-  document.getElementById('leadForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const nombre  = document.getElementById('nombre').value.trim();
-    const interes = document.getElementById('interes').value;
-    const detalle = document.getElementById('detalle').value.trim();
-    let msg = `Hola Milton, soy ${nombre}. Estoy interesado en: ${interes}.`;
-    if(detalle) msg += ` Detalle: ${detalle}`;
-    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-    window.open(url, '_blank');
-  });
 </script>
 </body>
 </html>
