@@ -86,6 +86,10 @@
   .bio .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
   .bio .tags span{font-size:11.5px;font-weight:600;color:#cdd6ff;background:rgba(99,102,241,.16);
     border:1px solid var(--card-bd);padding:4px 11px;border-radius:999px}
+  .li-link{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:12.5px;font-weight:600;
+    color:#7ab8ff;text-decoration:none;background:rgba(10,102,194,.14);border:1px solid rgba(122,184,255,.28);
+    padding:7px 13px;border-radius:10px;transition:background .14s,border-color .14s}
+  .li-link:hover{background:rgba(10,102,194,.24);border-color:rgba(122,184,255,.5)}
   @media(max-width:520px){.bio{flex-direction:column;align-items:flex-start}}
 
   /* ---------- CTA final ---------- */
@@ -167,18 +171,21 @@
       </div>
     </div>
 
-    <!-- ===== BIO ABOGADA (EDITAR) ===== -->
+    <!-- ===== BIO ABOGADA: Carolina Godoy ===== -->
     <div class="bio a">
-      <!-- EDITAR: inicial o <img src="abogada.jpg" alt="Nombre"> -->
-      <div class="pic">A</div>
+      <!-- Para usar foto: reemplaza la "C" por <img src="carolina.jpg" alt="Carolina Godoy"> -->
+      <div class="pic">C</div>
       <div class="info">
-        <h3>[Nombre de la abogada]</h3>
-        <div class="pos">Abogada · Derecho Inmobiliario</div>
-        <!-- EDITAR: biografía de la abogada -->
-        <p>Abogada especializada en derecho inmobiliario y notarial. Acompaña a cada cliente para que sus operaciones sean seguras: revisión de contratos, escrituración y resolución de cualquier tema legal con claridad y cercanía.</p>
+        <h3>Carolina Godoy</h3>
+        <div class="pos">Socia · Asesora Legal Inmobiliaria</div>
+        <p>Abogada egresada de la Universidad Católica de Salta (UCASAL) y diplomada en Derecho Inmobiliario y Gestión de Bienes Raíces. Como socia y asesora legal, brinda acompañamiento integral en cada operación: redacción y revisión de contratos de compraventa, alquiler y boletos de reserva, escrituración, administración de consorcios y tramitación de sucesiones. Su experiencia abarca también los fueros civil, laboral y de familia, aportando respaldo jurídico y tranquilidad en cada paso.</p>
         <div class="tags">
-          <span>Contratos</span><span>Escrituración</span><span>Seguridad jurídica</span>
+          <span>Derecho Inmobiliario</span><span>Contratos</span><span>Sucesiones</span><span>Consorcios</span>
         </div>
+        <a class="li-link" href="https://www.linkedin.com/in/cjgodoy/" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V9.99H5.67v8.35h2.67zM7 8.81a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.53v-4.57c0-2.45-1.31-3.59-3.06-3.59-1.41 0-2.04.78-2.39 1.32v-1.13h-2.67c.04.75 0 8.35 0 8.35h2.67v-4.66c0-.24.02-.48.09-.65.19-.48.63-.97 1.37-.97.96 0 1.35.73 1.35 1.81v4.47h2.64z"/></svg>
+          Perfil verificado en LinkedIn
+        </a>
       </div>
     </div>
   </section>
